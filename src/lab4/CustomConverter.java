@@ -4,6 +4,7 @@
  */
 package lab4;
 
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,9 +26,10 @@ public class CustomConverter {
      *      second item is total fees.
      */
     
-    public Map readConvert(List<String> data){
-        String totalHours = data.get(0);
-        String totalFees = data.get(1);
+    public Map readConvert(Collection <String> data){
+        String [] dataArray = data.toArray(new String[0]);
+        String totalHours = dataArray[0];
+        String totalFees = dataArray[1];
         Map<String, String> map = new LinkedHashMap<String, String>();
         map.put("totalHours", totalHours);
         map.put("totalFees", totalFees);
