@@ -1,5 +1,5 @@
 
-package lab2;
+package lab3;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,19 +8,22 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
-public class Lab2 {
+public class Lab3 {
 
-  
+    
     public static void main(String[] args) {
-        File file = new File("E:" + File.separatorChar + "java" + File.separatorChar
+        
+               File file = new File("E:" + File.separatorChar + "java" + File.separatorChar
                 + "lab1.txt");
         boolean append = true;
         int LINES_PER_RECORD = 3;
         int lineCount = 0;
         int recordNumber = 1;
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Please enter record number");
-        int requestedRecordNumber = keyboard.nextInt();
+        int requestedRecordNumber = 2;
+        int lineNumberToRead = 3;
+        char [] lineArray;
+        
+        
             
 
         if (file.exists()) {
@@ -57,18 +60,36 @@ public class Lab2 {
                     }while (recordNumber != requestedRecordNumber);
                     
                    if (recordNumber == requestedRecordNumber){ 
-                   for (int i = 0; i < LINES_PER_RECORD; i++){   
-                    System.out.println(line);
-                    line = in.readLine();
-                 } 
-                   } 
+                   for (int i = 2; i <= LINES_PER_RECORD; i++){
+                       line = in.readLine();
+                    if (i == lineNumberToRead){
+                        
+                        lineArray = line.toCharArray();
+                        for(int a = 0; a< lineArray.length;a++)
+                        {
+                        if (lineArray[a] != ','){
+                        System.out.print(lineArray[a]);
+                        }else{
+                        break;
+                        }
+                        
+                        }
+                        
+                        
+                     
+                    }
+                    }
+                        
+                    }
+                   }}
+//                    System.out.println(line);
+//                    line = in.readLine();
+//                 } 
+//                   } 
                     
-                    } 
+                     
 //                 
-                    
-                    
-               
-                }
+     
 
             } catch (IOException ioe) {
                 System.out.println("Error reading file");
@@ -81,6 +102,7 @@ public class Lab2 {
 
         } else {
             System.out.println("File not found: " + file.getAbsoluteFile());
-        }
+        } 
+       
     }
 }
