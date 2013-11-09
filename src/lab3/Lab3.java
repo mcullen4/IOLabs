@@ -45,9 +45,7 @@ public class Lab3 {
                                          
                     do{
                     
-//                    if(lineCount % LINES_PER_RECORD == 1){
-//                    recordNumber++;
-//                    }
+
                     line = in.readLine();
                     if (line == null){
                     System.out.println("End of file reached - invalid record number");
@@ -82,13 +80,7 @@ public class Lab3 {
                         
                     }
                    }}
-//                    System.out.println(line);
-//                    line = in.readLine();
-//                 } 
-//                   } 
-                    
-                     
-//                 
+                 
      
 
             } catch (IOException ioe) {
